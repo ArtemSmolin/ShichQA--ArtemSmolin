@@ -1,0 +1,43 @@
+#/!bin/bash
+
+options=(
+	'1'
+	"2"
+	'3'
+	'4'
+	'5'
+)
+echo 'Please choose an option'      // выводит сообщение "Please choose an option"
+select input in "${options[@]}"; do  // нужно нажать цифру от 1 до 5
+	case "$input" in
+		"${options[0]}")
+			ls                       // список файлов в текущей директории
+			;;
+		"${options[1]}")
+			date $'+Time: %T\nDate: %D'   // выводит время и дату
+			;;
+		"${options[2]}")
+			read -p 'What file do you wish to check? ' finput  //выводит сообщение "What file do you wish to check?" 
+			if [[ -d $finput ]]; then                          // производиться проверка директори,именя файла,отсутствие файла
+				format='%s is a directory.\n'
+			elif [[ -f $finput ]]; then
+				format='%s is a file.\n'
+			else
+				format='%s does not exist.\n'
+			fi
+			printf "$format" "$finput"
+			;;
+		"${options[3]}")
+			read -p 'Please enter filename: ' binput  // Выводит сообщение"Please enter filename:"
+			cp "$binput"{,.bak}                       // Создается резервная копия файла
+			;;
+		"${options[4]}")                          // выход из скрипта
+			break
+			;;
+		*)
+			echo 'Not a valid option.'    // выводит сообщение'Not a valid option.' когда цифра опции выбрана больше 5
+			;;
+	esac
+done
+
+//СКРИПН РАБОТАЕТ
