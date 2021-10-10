@@ -1,0 +1,24 @@
+{
+	"info": {
+		"_postman_id": "d48e33e8-1439-44f0-95b8-708589eec7c3",
+		"name": "1 задание",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1 задание",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "ya.ru",
+					"host": [
+						"ya",
+						"ru"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
