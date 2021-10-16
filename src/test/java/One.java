@@ -185,8 +185,6 @@ public class One {
 
         assertEquals("Card number is not valid", driver.findElement(By.xpath("//*[@id=\"card-number-field\"]/div/label")).getText());
 
-        Screenshot screenshot = new AShot().takeScreenshot(driver);
-        ImageIO.write(screenshot.getImage(), "png", new File("src/test/err_numb.png"));
     }
 
     @Test
@@ -202,8 +200,6 @@ public class One {
 
         assertEquals("Cardholder name is not valid", driver.findElement(By.xpath("//*[@id=\"card-holder-field\"]/div/label")).getText());
 
-        Screenshot screenshot = new AShot().takeScreenshot(driver);
-        ImageIO.write(screenshot.getImage(), "png", new File("src/test/err_hold.png"));
     }
 
     @Test
@@ -221,8 +217,6 @@ public class One {
 
         assertEquals("Invalid date", driver.findElement(By.xpath("//*[@id=\"card-expires-field\"]/div/label")).getText());
 
-        Screenshot screenshot = new AShot().takeScreenshot(driver);
-        ImageIO.write(screenshot.getImage(), "png", new File("src/test/err_date.png"));
     }
 
     @Test
@@ -238,8 +232,6 @@ public class One {
 
         assertEquals("CVV2/CVC2/CAV2 is not valid", driver.findElement(By.xpath("//*[@id=\"card-cvc-field\"]/div/label")).getText());
 
-        Screenshot screenshot = new AShot().takeScreenshot(driver);
-        ImageIO.write(screenshot.getImage(), "png", new File("src/test/err_cvc.png"));
     }
 
     @Test
@@ -251,9 +243,6 @@ public class One {
 
         Actions action = new Actions(driver);
         action.moveToElement(Cvc).perform();
-
-        Screenshot screenshot = new AShot().takeScreenshot(driver);
-        ImageIO.write(screenshot.getImage(), "png", new File("src/test/sc.png"));
 
     }
 
